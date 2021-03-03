@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Header from './components/Header'
+import Hotbar from './components/Hotbar'
+import DashBoard from './components/DashBoard'
 
+// Javscript Object: https://www.w3schools.com/js/js_json_intro.asp
+
+// Arrays: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+const mockPosts = [
+	{
+		title: 'My hemoroids be poppin up again',
+		body: 'Loremi ipsum гъза ми',
+		upvotes: 3,
+		downvotes: 0,
+		date: new Date(),
+	},
+	{
+		title: 'My hemoroids be poppin up again',
+		body: 'Loremi ipsum гъза ми',
+		upvotes: 3,
+		downvotes: 0,
+		date: new Date(),
+	},
+	{
+		title: 'Asldkjaj',
+		body: 'aslkja',
+		upvotes: 3,
+		downvotes: 0,
+		date: new Date(),
+	},
+]
+
+// Component: https://reactjs.org/docs/components-and-props.html
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+
+			<Hotbar />
+
+			{/* Props:  https://reactjs.org/docs/components-and-props.html*/}
+			<DashBoard posts={mockPosts} />
+		</div>
+	)
 }
 
-export default App;
+export default App
